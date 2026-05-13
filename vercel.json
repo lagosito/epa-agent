@@ -1,0 +1,21 @@
+{
+  "regions": ["fra1"],
+  "functions": {
+    "app/api/documents/parse/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/chat/route.ts": {
+      "maxDuration": 60
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/auto-delete",
+      "schedule": "0 5 * * *"
+    },
+    {
+      "path": "/api/cron/parse-queue",
+      "schedule": "*/5 * * * *"
+    }
+  ]
+}
